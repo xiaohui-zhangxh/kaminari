@@ -6,7 +6,7 @@ module Kaminari
         ::ActiveRecord::Base.send :include, Kaminari::ActiveRecordExtension
       end
 
-      begin; require 'mongoid'; rescue LoadError; end
+      # begin; require 'mongoid'; rescue LoadError; end
       if defined? ::Mongoid
         require 'kaminari/models/mongoid_extension'
         ::Mongoid::Document.send :include, Kaminari::MongoidExtension::Document
